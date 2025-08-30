@@ -6,7 +6,7 @@ import os
 import time
 
 # ====== توکن ربات ======
-TOKEN = "8213399989:AAE18J2avIrgm4A0RRQYkESAueqS_VWlx4U"
+TOKEN = os.environ.get("TOKEN")
 bot = telebot.TeleBot(TOKEN)
 
 # ====== handler های ربات ======
@@ -53,4 +53,5 @@ def home():
 
 if __name__ == "__main__":
     port = int(os.environ.get("PORT", 10000))
+
     app.run(host="0.0.0.0", port=port)
